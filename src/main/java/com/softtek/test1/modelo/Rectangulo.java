@@ -1,8 +1,8 @@
 package com.softtek.test1.modelo;
 
 public class Rectangulo extends Figura{
-    private double ancho;
-    private double alto;
+    private final double ancho;
+    private final double alto;
 
     public Rectangulo(int x, int y, double ancho, double alto) {
         super(x, y);

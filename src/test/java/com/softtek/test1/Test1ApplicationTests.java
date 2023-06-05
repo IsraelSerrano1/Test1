@@ -42,9 +42,7 @@ class Test1ApplicationTests {
 		double resultadoDivision = Calculadora.dividir(10,5);
 		Assertions.assertEquals(2, resultadoDivision);
 
-		Assertions.assertThrows(Exception.class, () -> {
-			Calculadora.dividir(10.0, 0.0);
-		});
+		Assertions.assertThrows(Exception.class, () -> Calculadora.dividir(10.0, 0.0));
 
 	}
 
