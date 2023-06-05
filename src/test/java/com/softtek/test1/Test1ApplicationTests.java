@@ -14,11 +14,18 @@ import org.springframework.boot.test.context.SpringBootTest;
 class Test1ApplicationTests {
 	private Figura fig;
 	private Circulo circulo;
+	private Rectangulo rectangulo;
 	@BeforeEach
 	public void antesCada() {
 		fig = new Figura(3, 5);
 		circulo = new Circulo(3, 5, 5.0);
+		rectangulo = new Rectangulo(3,5,4,6);
 }
+
+	@Test
+	public void contextLoads() {
+		// Esta prueba verifica que el contexto de la aplicación se cargue correctamente
+	}
 
 	@Test
 	@DisplayName("TestCalculadora")
@@ -44,53 +51,34 @@ class Test1ApplicationTests {
 	@Test
 	@DisplayName("Probando métodos de rectángulo")
 	void testRectangulo(){
-		double resultadoAreaRectangulo = Rectangulo.areaRectangulo(4,4);
-		Assertions.assertEquals(16, resultadoAreaRectangulo);
-	}
-	@Test
-	public void testPosicionCirculo() {
-		String posicion = Circulo.posicion();
+		double resultadoAreaRectangulo = rectangulo.areaRectangulo(rectangulo.getAncho(), rectangulo.getAlto());
+		String posicion = rectangulo.posicion();
+		Assertions.assertEquals(24, resultadoAreaRectangulo);
 		Assertions.assertEquals("(3, 5)", posicion);
 	}
+
 
 	@Test
 	@DisplayName("Probando métodos de circulo")
 	void testCirculo(){
-		double resultadoAreaCirculo = Circulo.areaCirculo(circulo.getRadio());
+		double resultadoAreaCirculo = circulo.areaCirculo(circulo.getRadio());
+		String posicion = circulo.posicion();
 		Assertions.assertEquals(78.53981633974483,resultadoAreaCirculo);
-
-	}
-
-	@Test
-	public void testGetCoordenadaX() {
-		Assertions.assertEquals(3, Figura.getCoordenadaX());
-	}
-
-	@Test
-	public void testSetCoordenadaX() {
-		Figura.setCoordenadaX(8);
-		int coordenadaX = Figura.getCoordenadaX();
-		Assertions.assertEquals(8, coordenadaX);
-	}
-
-	@Test
-	public void testGetCoordenadaY() {
-		int coordenadaY = Figura.getCoordenadaY();
-		Assertions.assertEquals(5, coordenadaY);
-	}
-
-	@Test
-	public void testSetCoordenadaY() {
-		Figura.setCoordenadaY(10);
-		int coordenadaY = Figura.getCoordenadaY();
-		Assertions.assertEquals(10, coordenadaY);
-	}
-
-	@Test
-	public void testPosicion() {
-		String posicion = Figura.posicion();
 		Assertions.assertEquals("(3, 5)", posicion);
 	}
 
+	@Test
+	@DisplayName("Probando métodos de figura")
+	void testFigura(){
+		fig.setCoordenadaX(8);
+		int coordenadaX = fig.getCoordenadaX();
+		Assertions.assertEquals(8, coordenadaX);
+		fig.setCoordenadaY(10);
+		int coordenadaY = fig.getCoordenadaY();
+		Assertions.assertEquals(10, coordenadaY);
+		String posicion = fig.posicion();
+		Assertions.assertEquals("(8, 10)", posicion);
+
+	}
 
 }

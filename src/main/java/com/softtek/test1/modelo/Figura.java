@@ -8,19 +8,19 @@ public class Figura {
         coordenadaX = x;
         coordenadaY = y;
     }
-    public static int getCoordenadaX() {
+    public int getCoordenadaX() {
         return coordenadaX;
     }
-    public static void setCoordenadaX(int coordenadaX) {
+    public void setCoordenadaX(int coordenadaX) {
         Figura.coordenadaX = coordenadaX;
     }
-    public static int getCoordenadaY() {
+    public int getCoordenadaY() {
         return coordenadaY;
     }
-    public static void setCoordenadaY(int coordenadaY) {
+    public void setCoordenadaY(int coordenadaY) {
         Figura.coordenadaY = coordenadaY;
     }
-    public static String posicion() {
+    public String posicion() {
         return "(" + coordenadaX + ", " + coordenadaY + ")";
     }
 

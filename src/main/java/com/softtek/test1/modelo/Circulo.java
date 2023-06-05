@@ -2,7 +2,6 @@ package com.softtek.test1.modelo;
 
 import static java.lang.Math.PI;
 
-
 public class Circulo extends Figura{
     private double radio;
     public Circulo(int x, int y, double radio) {
@@ -14,8 +13,9 @@ public class Circulo extends Figura{
         return radio;
     }
 
-    public static String posicion() {
-        return Figura.posicion();
+    @Override
+    public String posicion() {
+        return super.posicion();
     }
 
     public static double areaCirculo(double radio){

@@ -10,11 +10,19 @@ public class Rectangulo extends Figura{
         this.alto = alto;
     }
 
-    public static String posicion() {
-        return Figura.posicion();
+    public double getAncho() {
+        return ancho;
     }
 
-    public static double areaRectangulo(double ancho, double alto){
+    public double getAlto() {
+        return alto;
+    }
+    @Override
+    public  String posicion() {
+        return super.posicion();
+    }
+
+    public double areaRectangulo(double ancho, double alto){
         return ancho * alto;
     }
 }
