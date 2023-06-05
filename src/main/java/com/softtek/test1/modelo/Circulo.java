@@ -1,4 +1,7 @@
-package com.softtek.modelo.herencia1;
+package com.softtek.test1.modelo;
+
+import static java.lang.Math.PI;
+
 
 public class Circulo extends Figura{
     private double radio;
@@ -6,8 +9,16 @@ public class Circulo extends Figura{
         super(x, y);
         this.radio = radio;
     }
-    @Override
-    public String posicion() {
-        return super.posicion();
+
+    public double getRadio() {
+        return radio;
+    }
+
+    public static String posicion() {
+        return Figura.posicion();
+    }
+
+    public static double areaCirculo(double radio){
+        return PI * Math.pow(radio, 2);
     }
 }

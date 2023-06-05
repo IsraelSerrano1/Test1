@@ -1,26 +1,28 @@
-package com.softtek.modelo.herencia1;
+package com.softtek.test1.modelo;
 
 public class Figura {
-    protected int coordenadaX;
-    protected int coordenadaY;
+    protected static int coordenadaX;
+    protected static int coordenadaY;
 
     public Figura(int x, int y) {
         coordenadaX = x;
         coordenadaY = y;
     }
-    public int getCoordenadaX() {
+    public static int getCoordenadaX() {
         return coordenadaX;
     }
-    public void setCoordenadaX(int coordenadaX) {
-        this.coordenadaX = coordenadaX;
+    public static void setCoordenadaX(int coordenadaX) {
+        Figura.coordenadaX = coordenadaX;
     }
-    public int getCoordenadaY() {
+    public static int getCoordenadaY() {
         return coordenadaY;
     }
-    public void setCoordenadaY(int coordenadaY) {
-        this.coordenadaY = coordenadaY;
+    public static void setCoordenadaY(int coordenadaY) {
+        Figura.coordenadaY = coordenadaY;
     }
-    public String posicion() {
+    public static String posicion() {
         return "(" + coordenadaX + ", " + coordenadaY + ")";
     }
+
+
 }

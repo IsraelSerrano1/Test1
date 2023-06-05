@@ -1,4 +1,4 @@
-package com.softtek.modelo.herencia1;
+package com.softtek.test1.modelo;
 
 public class Rectangulo extends Figura{
     private double ancho;
@@ -9,8 +9,12 @@ public class Rectangulo extends Figura{
         this.ancho = ancho;
         this.alto = alto;
     }
-    @Override
-    public String posicion() {
-        return super.posicion();
+
+    public static String posicion() {
+        return Figura.posicion();
+    }
+
+    public static double areaRectangulo(double ancho, double alto){
+        return ancho * alto;
     }
 }
