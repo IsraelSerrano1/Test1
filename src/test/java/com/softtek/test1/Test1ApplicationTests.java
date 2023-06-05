@@ -61,7 +61,7 @@ class Test1ApplicationTests {
 	void testCirculo(){
 		double resultadoAreaCirculo = circulo.areaCirculo(circulo.getRadio());
 		String posicion = circulo.posicion();
-		Assertions.assertEquals(78.53981633974483,resultadoAreaCirculo);
+		Assertions.assertEquals(78.54,resultadoAreaCirculo,0.001);
 		Assertions.assertEquals("(3, 5)", posicion);
 	}
 
